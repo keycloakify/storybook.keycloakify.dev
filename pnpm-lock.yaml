@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@keycloakify/keycloak-account-multi-page-ui':
-        specifier: ~210102.0.9
-        version: 210102.0.10(tsafe@1.8.5)
+        specifier: ~210102.0.11
+        version: 210102.0.11(tsafe@1.8.5)
       '@keycloakify/keycloak-login-ui':
-        specifier: ~250004.0.23
+        specifier: ~250004.0.24
         version: 250004.0.24(tsafe@1.8.5)
       keycloakify:
         specifier: ^11.8.39
@@ -375,8 +375,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@keycloakify/keycloak-account-multi-page-ui@210102.0.10':
-    resolution: {integrity: sha512-LOaVuJh/UOM7dW2mgL/raMVlYRbtGKC8j+kAXGqtF+XhEfRxy87zQlQesomADoExzPg1iYOgiE1pSKhl3Hx4vg==}
+  '@keycloakify/keycloak-account-multi-page-ui@210102.0.11':
+    resolution: {integrity: sha512-sQHm1/vPv2D+/e+lsaowJhh+FjMVt6GlJ7pBGUoQHk3MA6rDUuUYXIpA5L5kfuii8IXtnZNFuAm4vM4HU1vY8w==}
     peerDependencies:
       tsafe: ^1.8.5
 
@@ -1407,7 +1407,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@keycloakify/keycloak-account-multi-page-ui@210102.0.10(tsafe@1.8.5)':
+  '@keycloakify/keycloak-account-multi-page-ui@210102.0.11(tsafe@1.8.5)':
     dependencies:
       tsafe: 1.8.5
 
