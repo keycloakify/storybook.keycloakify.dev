@@ -3,6 +3,21 @@
 # === Owned files start ===
 # === Owned files end =====
 
+# === @keycloakify/keycloak-account-multi-page-ui v210102.0.11 ===
+/account/resources-common/node_modules/patternfly/dist/css/patternfly-additions.min.css
+/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Regular-webfont.woff2
+/account/resources-common/node_modules/patternfly/dist/css/patternfly.min.css
+/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Semibold-webfont.woff2
+/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Bold-webfont.woff2
+/account/resources-common/node_modules/patternfly/dist/fonts/PatternFlyIcons-webfont.ttf
+/account/resources-common/node_modules/patternfly/dist/fonts/PatternFlyIcons-webfont.woff
+/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Light-webfont.woff2
+/account/img/icon-sidebar-active.png
+/account/img/logo.png
+/account/img/keycloak-logo.png
+/account/resources-common/img/favicon.ico
+/account/css/account.css
+
 # === @keycloakify/keycloak-login-ui v250004.0.24 ===
 /login/resources-common/node_modules/@patternfly/patternfly/assets/fonts/RedHatDisplay/RedHatDisplay-Bold.woff
 /login/resources-common/node_modules/patternfly/dist/img/bg-login.jpg
@@ -50,18 +65,3 @@
 /login/js/menu-button-links.js
 /login/resources-common/lib/pficon/pficon.woff2
 /login/resources-common/lib/pficon/pficon.css
-
-# === @keycloakify/keycloak-account-multi-page-ui v210102.0.11 ===
-/account/resources-common/node_modules/patternfly/dist/css/patternfly-additions.min.css
-/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Regular-webfont.woff2
-/account/resources-common/node_modules/patternfly/dist/css/patternfly.min.css
-/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Semibold-webfont.woff2
-/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Bold-webfont.woff2
-/account/resources-common/node_modules/patternfly/dist/fonts/PatternFlyIcons-webfont.ttf
-/account/resources-common/node_modules/patternfly/dist/fonts/PatternFlyIcons-webfont.woff
-/account/resources-common/node_modules/patternfly/dist/fonts/OpenSans-Light-webfont.woff2
-/account/img/icon-sidebar-active.png
-/account/img/logo.png
-/account/img/keycloak-logo.png
-/account/resources-common/img/favicon.ico
-/account/css/account.css

@@ -3,6 +3,29 @@
 # === Owned files start ===
 # === Owned files end =====
 
+# === @keycloakify/keycloak-account-multi-page-ui v210102.0.11 ===
+/account/KcContext.ts
+/account/KcPage.tsx
+/account/i18n.ts
+/account/mocks/getKcContextMock.ts
+/account/pages/totp/Page.tsx
+/account/pages/account/Page.tsx
+/account/components/Template/index.ts
+/account/pages/federatedIdentity/Page.tsx
+/account/pages/applications/index.ts
+/account/pages/log/Page.tsx
+/account/pages/password/Page.tsx
+/account/pages/sessions/index.ts
+/account/components/Template/Template.tsx
+/account/components/Template/useInitializeTemplate.ts
+/account/pages/account/index.ts
+/account/pages/applications/Page.tsx
+/account/pages/federatedIdentity/index.ts
+/account/pages/password/index.ts
+/account/pages/totp/index.ts
+/account/pages/log/index.ts
+/account/pages/sessions/Page.tsx
+
 # === @keycloakify/keycloak-login-ui v250004.0.24 ===
 /login/KcContext.ts
 /login/components/LogoutOtherSessions.tsx
@@ -107,26 +130,3 @@
 /login/pages/webauthn-register/index.ts
 /login/pages/webauthn-register/useScript.tsx
 /login/pages/login-passkeys-conditional-authenticate/index.ts
-
-# === @keycloakify/keycloak-account-multi-page-ui v210102.0.11 ===
-/account/KcContext.ts
-/account/KcPage.tsx
-/account/i18n.ts
-/account/mocks/getKcContextMock.ts
-/account/pages/totp/Page.tsx
-/account/pages/account/Page.tsx
-/account/components/Template/index.ts
-/account/pages/federatedIdentity/Page.tsx
-/account/pages/applications/index.ts
-/account/pages/log/Page.tsx
-/account/pages/password/Page.tsx
-/account/pages/sessions/index.ts
-/account/components/Template/Template.tsx
-/account/components/Template/useInitializeTemplate.ts
-/account/pages/account/index.ts
-/account/pages/applications/Page.tsx
-/account/pages/federatedIdentity/index.ts
-/account/pages/password/index.ts
-/account/pages/totp/index.ts
-/account/pages/log/index.ts
-/account/pages/sessions/Page.tsx
