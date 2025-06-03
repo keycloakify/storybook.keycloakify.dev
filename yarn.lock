@@ -414,6 +414,26 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@keycloakify/keycloak-account-multi-page-ui-storybook@^210102.0.0":
+  version "210102.0.0"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-account-multi-page-ui-storybook/-/keycloak-account-multi-page-ui-storybook-210102.0.0.tgz#e570c03ae53d350a6a10e685cac11d9e9ac6ea49"
+  integrity sha512-NS6xKWUwqdPHQG7W7/ZRsQ6ZKza0dm6C0PfdCl4YFIY1KOYjFYdHHue4dMHBL7nWiWA2s6YWDAhQ5Zda8jdplg==
+
+"@keycloakify/keycloak-account-multi-page-ui@~210102.0.9":
+  version "210102.0.10"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-account-multi-page-ui/-/keycloak-account-multi-page-ui-210102.0.10.tgz#634cd3abd5ef10e9994bcfbb2322eed2a4474d9f"
+  integrity sha512-LOaVuJh/UOM7dW2mgL/raMVlYRbtGKC8j+kAXGqtF+XhEfRxy87zQlQesomADoExzPg1iYOgiE1pSKhl3Hx4vg==
+
+"@keycloakify/keycloak-login-ui-storybook@^250004.0.0":
+  version "250004.0.0"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-login-ui-storybook/-/keycloak-login-ui-storybook-250004.0.0.tgz#5b4b80aa237e909fccc14168b8bfdcdaa11ff9cd"
+  integrity sha512-lpJDKs7ZI9Oh95xeLhaGrvYrY5eu4Cj5wzAfy81e3r6vnrV0+LYu4+TblOxYYViwsC7ufDfU81nPvpwB1Dhu6g==
+
+"@keycloakify/keycloak-login-ui@~250004.0.23":
+  version "250004.0.24"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-login-ui/-/keycloak-login-ui-250004.0.24.tgz#6fb52289514e91b22e340e21c15c9abd187ffe00"
+  integrity sha512-u3hFwteGhmB5Tw5HUJUIoJu4SMB/IqSGfm9RrTS8mge4OZY+rxgAPSyB2ZtIUvaiOfqTgrP95DGbf0oRBDS0xw==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
