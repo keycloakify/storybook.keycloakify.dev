@@ -22,6 +22,8 @@
         "tsafe": "^1.8.5"
     },
     "devDependencies": {
+        "@keycloakify/keycloak-account-multi-page-ui-storybook": "~210102.0.0",
+        "@keycloakify/keycloak-login-ui-storybook": "~250004.0.0",
         "@eslint/js": "^9.25.0",
         "@storybook/addon-onboarding": "^9.0.4",
         "@storybook/react-vite": "^9.0.4",
