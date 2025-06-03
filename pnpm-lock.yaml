@@ -30,12 +30,6 @@ importers:
       '@eslint/js':
         specifier: ^9.25.0
         version: 9.28.0
-      '@keycloakify/keycloak-account-multi-page-ui-storybook':
-        specifier: ^210102.0.0
-        version: 210102.0.0(@keycloakify/keycloak-account-multi-page-ui@210102.0.10(tsafe@1.8.5))
-      '@keycloakify/keycloak-login-ui-storybook':
-        specifier: ^250004.0.0
-        version: 250004.0.0(@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5))
       '@types/react':
         specifier: ^19.1.2
         version: 19.1.6
@@ -381,20 +375,10 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.0':
-    resolution: {integrity: sha512-NS6xKWUwqdPHQG7W7/ZRsQ6ZKza0dm6C0PfdCl4YFIY1KOYjFYdHHue4dMHBL7nWiWA2s6YWDAhQ5Zda8jdplg==}
-    peerDependencies:
-      '@keycloakify/keycloak-account-multi-page-ui': ~210102.0.9
-
   '@keycloakify/keycloak-account-multi-page-ui@210102.0.10':
     resolution: {integrity: sha512-LOaVuJh/UOM7dW2mgL/raMVlYRbtGKC8j+kAXGqtF+XhEfRxy87zQlQesomADoExzPg1iYOgiE1pSKhl3Hx4vg==}
     peerDependencies:
       tsafe: ^1.8.5
-
-  '@keycloakify/keycloak-login-ui-storybook@250004.0.0':
-    resolution: {integrity: sha512-lpJDKs7ZI9Oh95xeLhaGrvYrY5eu4Cj5wzAfy81e3r6vnrV0+LYu4+TblOxYYViwsC7ufDfU81nPvpwB1Dhu6g==}
-    peerDependencies:
-      '@keycloakify/keycloak-login-ui': ~250004.0.23
 
   '@keycloakify/keycloak-login-ui@250004.0.24':
     resolution: {integrity: sha512-u3hFwteGhmB5Tw5HUJUIoJu4SMB/IqSGfm9RrTS8mge4OZY+rxgAPSyB2ZtIUvaiOfqTgrP95DGbf0oRBDS0xw==}
@@ -1423,17 +1407,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.0(@keycloakify/keycloak-account-multi-page-ui@210102.0.10(tsafe@1.8.5))':
-    dependencies:
-      '@keycloakify/keycloak-account-multi-page-ui': 210102.0.10(tsafe@1.8.5)
-
   '@keycloakify/keycloak-account-multi-page-ui@210102.0.10(tsafe@1.8.5)':
     dependencies:
       tsafe: 1.8.5
-
-  '@keycloakify/keycloak-login-ui-storybook@250004.0.0(@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5))':
-    dependencies:
-      '@keycloakify/keycloak-login-ui': 250004.0.24(tsafe@1.8.5)
 
   '@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5)':
     dependencies:
