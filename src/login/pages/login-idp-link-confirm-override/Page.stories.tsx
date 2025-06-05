@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-idp-link-confirm-override/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({
@@ -21,6 +21,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};

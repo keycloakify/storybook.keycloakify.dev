@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/delete-account-confirm/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "delete-account-confirm.ftl" });
@@ -19,36 +19,28 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 export const WithAIAFlow: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                triggered_from_aia: true,
-                url: { loginAction: "/login-action" }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            triggered_from_aia: true,
+            url: { loginAction: "/login-action" }
+        }
+    }
 };
 export const WithoutAIAFlow: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                triggered_from_aia: false,
-                url: { loginAction: "/login-action" }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            triggered_from_aia: false,
+            url: { loginAction: "/login-action" }
+        }
+    }
 };
 export const WithCustomButtonStyle: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                triggered_from_aia: true,
-                url: { loginAction: "/login-action" }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            triggered_from_aia: true,
+            url: { loginAction: "/login-action" }
+        }
+    }
 };

@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-update-profile/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "login-update-profile.ftl" });
@@ -19,9 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 
 /**
  * WithProfileError:
@@ -30,18 +28,16 @@ export const Default: Story = {
  * - Key Aspect: Ensures the profile fields show error messages when validation fails.
  */
 export const WithProfileError: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login-action"
-                },
-                messagesPerField: {
-                    existsError: (field: string) => field === "email",
-                    get: () => "Invalid email format"
-                },
-                isAppInitiatedAction: false
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login-action"
+            },
+            messagesPerField: {
+                existsError: (field: string) => field === "email",
+                get: () => "Invalid email format"
+            },
+            isAppInitiatedAction: false
+        }
+    }
 };

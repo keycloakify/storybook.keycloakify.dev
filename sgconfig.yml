@@ -1,0 +1,5 @@
+rules:
+  - replace-render-with-args-1
+  - replace-render-with-args-2
+ruleDirs:
+  - ./sg-rules

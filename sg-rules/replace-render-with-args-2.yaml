@@ -1,0 +1,12 @@
+id: replace-render-with-args-2
+language: TSX
+rule:
+  all:
+    - pattern:
+        context: |-
+          export const $_VAR = { $STORY }
+        selector: object
+    - pattern:
+        context: "{ render: () => <KcPageStory /> }"
+        selector: object
+fix: "{}"

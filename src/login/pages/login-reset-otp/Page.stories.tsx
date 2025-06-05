@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-reset-otp/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "login-reset-otp.ftl" });
@@ -19,9 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 
 /**
  * WithoutOtpCredentials:
@@ -30,22 +28,20 @@ export const Default: Story = {
  * - Key Aspect: Ensures that the component handles the absence of OTP credentials correctly.
  */
 export const WithoutOtpCredentials: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login"
-                },
-                configuredOtpCredentials: {
-                    userOtpCredentials: [],
-                    selectedCredentialId: undefined
-                },
-                messagesPerField: {
-                    existsError: () => false
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login"
+            },
+            configuredOtpCredentials: {
+                userOtpCredentials: [],
+                selectedCredentialId: undefined
+            },
+            messagesPerField: {
+                existsError: () => false
+            }
+        }
+    }
 };
 
 /**
@@ -55,26 +51,24 @@ export const WithoutOtpCredentials: Story = {
  * - Key Aspect: Ensures that error messages are displayed correctly for OTP-related errors.
  */
 export const WithOtpError: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login"
-                },
-                configuredOtpCredentials: {
-                    userOtpCredentials: [
-                        { id: "otp1", userLabel: "Device 1" },
-                        { id: "otp2", userLabel: "Device 2" }
-                    ],
-                    selectedCredentialId: "otp1"
-                },
-                messagesPerField: {
-                    existsError: (field: string) => field === "totp",
-                    get: () => "Invalid OTP selection"
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login"
+            },
+            configuredOtpCredentials: {
+                userOtpCredentials: [
+                    { id: "otp1", userLabel: "Device 1" },
+                    { id: "otp2", userLabel: "Device 2" }
+                ],
+                selectedCredentialId: "otp1"
+            },
+            messagesPerField: {
+                existsError: (field: string) => field === "totp",
+                get: () => "Invalid OTP selection"
+            }
+        }
+    }
 };
 
 /**
@@ -84,20 +78,18 @@ export const WithOtpError: Story = {
  * - Key Aspect: Ensures that the component renders correctly with only one OTP credential pre-selected.
  */
 export const WithOnlyOneOtpCredential: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login"
-                },
-                configuredOtpCredentials: {
-                    userOtpCredentials: [{ id: "otp1", userLabel: "Device 1" }],
-                    selectedCredentialId: "otp1"
-                },
-                messagesPerField: {
-                    existsError: () => false
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login"
+            },
+            configuredOtpCredentials: {
+                userOtpCredentials: [{ id: "otp1", userLabel: "Device 1" }],
+                selectedCredentialId: "otp1"
+            },
+            messagesPerField: {
+                existsError: () => false
+            }
+        }
+    }
 };

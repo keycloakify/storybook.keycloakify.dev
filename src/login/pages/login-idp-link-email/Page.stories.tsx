@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-idp-link-email/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 // Mock kcContext to avoid TS2304 error and to simulate the real environment
@@ -50,20 +50,18 @@ export const Default: Story = {
  * - Key Aspect: Ensures the correct identity provider alias ("Google") and broker context (user info) are displayed in the email linking instructions.
  */
 export const WithIdpAlias: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                ...mockKcContext,
-                idpAlias: "Google",
-                brokerContext: {
-                    username: "john.doe"
-                },
-                realm: {
-                    displayName: "MyRealm"
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            ...mockKcContext,
+            idpAlias: "Google",
+            brokerContext: {
+                username: "john.doe"
+            },
+            realm: {
+                displayName: "MyRealm"
+            }
+        }
+    }
 };
 
 /**
@@ -73,20 +71,18 @@ export const WithIdpAlias: Story = {
  * - Key Aspect: Ensures that custom realm display names are rendered correctly alongside the idpAlias and broker context.
  */
 export const WithCustomRealmDisplayName: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                ...mockKcContext,
-                idpAlias: "Facebook",
-                brokerContext: {
-                    username: "jane.doe"
-                },
-                realm: {
-                    displayName: "CUSTOM REALM DISPLAY NAME"
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            ...mockKcContext,
+            idpAlias: "Facebook",
+            brokerContext: {
+                username: "jane.doe"
+            },
+            realm: {
+                displayName: "CUSTOM REALM DISPLAY NAME"
+            }
+        }
+    }
 };
 
 /**
@@ -96,18 +92,16 @@ export const WithCustomRealmDisplayName: Story = {
  * - Key Aspect: Verifies that the component can display error messages during form submission failure, ensuring proper error handling.
  */
 export const WithFormSubmissionError: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                ...mockKcContext,
-                url: {
-                    loginAction: "/error"
-                },
-                message: {
-                    type: "error",
-                    summary: "An error occurred during form submission."
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            ...mockKcContext,
+            url: {
+                loginAction: "/error"
+            },
+            message: {
+                type: "error",
+                summary: "An error occurred during form submission."
+            }
+        }
+    }
 };

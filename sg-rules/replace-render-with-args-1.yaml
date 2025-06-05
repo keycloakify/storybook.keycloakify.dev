@@ -1,0 +1,17 @@
+id: replace-render-with-args-1
+language: TSX
+rule:
+  all:
+    - pattern:
+        context: |-
+          export const $_VAR = { $STORY }
+        selector: object
+    - pattern:
+        context: "{ render: () => (<KcPageStory kcContext={ $OBJ } />) }"
+        selector: object
+fix: |-
+  {
+      args: {
+          kcContext: $OBJ
+      }
+  }

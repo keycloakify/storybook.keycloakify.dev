@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/saml-post-form/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "saml-post-form.ftl" });
@@ -19,6 +19,4 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};

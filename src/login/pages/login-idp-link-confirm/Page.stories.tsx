@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-idp-link-confirm/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 // Mock kcContext to avoid the TS2304 error
@@ -44,18 +44,16 @@ export const Default: Story = {
  * - Key Aspect: Verifies that the component can display error messages during form submission failure, ensuring proper error handling.
  */
 export const WithFormSubmissionError: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                ...mockKcContext,
-                url: {
-                    loginAction: "/error"
-                },
-                message: {
-                    type: "error",
-                    summary: "An error occurred during form submission."
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            ...mockKcContext,
+            url: {
+                loginAction: "/error"
+            },
+            message: {
+                type: "error",
+                summary: "An error occurred during form submission."
+            }
+        }
+    }
 };

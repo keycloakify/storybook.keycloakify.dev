@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/login-page-expired/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "login-page-expired.ftl" });
@@ -19,9 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 
 /**
  * WithErrorMessage:
@@ -30,18 +28,16 @@ export const Default: Story = {
  * - Key Aspect: Ensures that error messages are displayed correctly in addition to the page expiration notice.
  */
 export const WithErrorMessage: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginRestartFlowUrl: "/mock-restart-flow",
-                    loginAction: "/mock-continue-login"
-                },
-                message: {
-                    type: "error",
-                    summary: "An error occurred while processing your session."
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginRestartFlowUrl: "/mock-restart-flow",
+                loginAction: "/mock-continue-login"
+            },
+            message: {
+                type: "error",
+                summary: "An error occurred while processing your session."
+            }
+        }
+    }
 };

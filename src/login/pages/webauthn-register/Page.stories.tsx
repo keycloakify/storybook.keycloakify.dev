@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/webauthn-register/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "webauthn-register.ftl" });
@@ -19,9 +19,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 
 /**
  * WithRetryAvailable:
@@ -30,17 +28,15 @@ export const Default: Story = {
  * - Key Aspect: Ensures the retry functionality is available and the form allows the user to retry.
  */
 export const WithRetryAvailable: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login-action"
-                },
-                isSetRetry: true,
-                isAppInitiatedAction: false
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login-action"
+            },
+            isSetRetry: true,
+            isAppInitiatedAction: false
+        }
+    }
 };
 
 /**
@@ -50,20 +46,18 @@ export const WithRetryAvailable: Story = {
  * - Key Aspect: Ensures the error message is displayed correctly, informing the user of the registration failure.
  */
 export const WithErrorDuringRegistration: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                url: {
-                    loginAction: "/mock-login-action"
-                },
-                isSetRetry: false,
-                isAppInitiatedAction: false,
-                message: {
-                    summary:
-                        "An error occurred during WebAuthn registration. Please try again.",
-                    type: "error"
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            url: {
+                loginAction: "/mock-login-action"
+            },
+            isSetRetry: false,
+            isAppInitiatedAction: false,
+            message: {
+                summary:
+                    "An error occurred during WebAuthn registration. Please try again.",
+                type: "error"
+            }
+        }
+    }
 };

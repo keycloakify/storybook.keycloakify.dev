@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/info/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "info.ftl" });
@@ -20,52 +20,46 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                messageHeader: "Message header",
-                message: {
-                    summary: "Server info message"
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            messageHeader: "Message header",
+            message: {
+                summary: "Server info message"
+            }
+        }
+    }
 };
 
 export const WithLinkBack: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                messageHeader: "Message header",
-                message: {
-                    summary: "Server message"
-                },
-                actionUri: undefined
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            messageHeader: "Message header",
+            message: {
+                summary: "Server message"
+            },
+            actionUri: undefined
+        }
+    }
 };
 
 export const WithRequiredActions: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                messageHeader: "Message header",
-                message: {
-                    summary: "Required actions:"
-                },
-                requiredActions: [
-                    "CONFIGURE_TOTP",
-                    "UPDATE_PROFILE",
-                    "VERIFY_EMAIL",
-                    "CUSTOM_ACTION"
-                ],
-                "x-keycloakify": {
-                    messages: {
-                        "requiredAction.CUSTOM_ACTION": "Custom action"
-                    }
+    args: {
+        kcContext: {
+            messageHeader: "Message header",
+            message: {
+                summary: "Required actions:"
+            },
+            requiredActions: [
+                "CONFIGURE_TOTP",
+                "UPDATE_PROFILE",
+                "VERIFY_EMAIL",
+                "CUSTOM_ACTION"
+            ],
+            "x-keycloakify": {
+                messages: {
+                    "requiredAction.CUSTOM_ACTION": "Custom action"
                 }
-            }}
-        />
-    )
+            }
+        }
+    }
 };

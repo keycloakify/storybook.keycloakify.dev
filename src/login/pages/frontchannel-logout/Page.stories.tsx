@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/pages/frontchannel-logout/Page.stories.tsx" --revert
  */
 
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { createKcPageStory } from "../../mocks/KcPageStory";
 
 const { KcPageStory } = createKcPageStory({ pageId: "frontchannel-logout.ftl" });
@@ -19,17 +19,13 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {
-    render: () => <KcPageStory />
-};
+export const Default: Story = {};
 export const WithoutRedirectUrl: Story = {
-    render: () => (
-        <KcPageStory
-            kcContext={{
-                logout: {
-                    clients: []
-                }
-            }}
-        />
-    )
+    args: {
+        kcContext: {
+            logout: {
+                clients: []
+            }
+        }
+    }
 };
