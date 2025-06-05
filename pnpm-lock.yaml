@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@keycloakify/keycloak-account-multi-page-ui':
         specifier: ~210102.0.9
-        version: 210102.0.11(tsafe@1.8.5)
+        version: 210102.0.12(tsafe@1.8.5)
       '@keycloakify/keycloak-login-ui':
         specifier: ~250004.0.23
-        version: 250004.0.24(tsafe@1.8.5)
+        version: 250004.0.25(tsafe@1.8.5)
       keycloakify:
         specifier: ^11.8.39
         version: 11.8.39
@@ -31,11 +31,11 @@ importers:
         specifier: ^9.25.0
         version: 9.28.0
       '@keycloakify/keycloak-account-multi-page-ui-storybook':
-        specifier: ~210102.0.0
-        version: 210102.0.0(@keycloakify/keycloak-account-multi-page-ui@210102.0.11(tsafe@1.8.5))
+        specifier: ~210102.0.2
+        version: 210102.0.2(@keycloakify/keycloak-account-multi-page-ui@210102.0.12(tsafe@1.8.5))
       '@keycloakify/keycloak-login-ui-storybook':
-        specifier: ~250004.0.0
-        version: 250004.0.0(@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5))
+        specifier: ~250004.0.2
+        version: 250004.0.2(@keycloakify/keycloak-login-ui@250004.0.25(tsafe@1.8.5))
       '@storybook/addon-onboarding':
         specifier: ^9.0.4
         version: 9.0.4(storybook@9.0.4(@testing-library/dom@10.4.0)(prettier@3.5.3))
@@ -413,23 +413,23 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.0':
-    resolution: {integrity: sha512-NS6xKWUwqdPHQG7W7/ZRsQ6ZKza0dm6C0PfdCl4YFIY1KOYjFYdHHue4dMHBL7nWiWA2s6YWDAhQ5Zda8jdplg==}
+  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.2':
+    resolution: {integrity: sha512-sQQPR7jcu7GH1cFVu6+lCXtmgk5LujDGPz4PfdAstXhlUI/k2846Q+dY3iMJTg3HO9ELnAG4IbP5+k2DDut6tA==}
     peerDependencies:
       '@keycloakify/keycloak-account-multi-page-ui': ~210102.0.9
 
-  '@keycloakify/keycloak-account-multi-page-ui@210102.0.11':
-    resolution: {integrity: sha512-sQHm1/vPv2D+/e+lsaowJhh+FjMVt6GlJ7pBGUoQHk3MA6rDUuUYXIpA5L5kfuii8IXtnZNFuAm4vM4HU1vY8w==}
+  '@keycloakify/keycloak-account-multi-page-ui@210102.0.12':
+    resolution: {integrity: sha512-EKhRZ5pB40xXavw0RLGdh0J+W869ifXI7KnAjiDrMknZ/Ldv9oQbscVq7p2cMquRvwmF5lU9HyAzQ4JdGeG5Yw==}
     peerDependencies:
       tsafe: ^1.8.5
 
-  '@keycloakify/keycloak-login-ui-storybook@250004.0.0':
-    resolution: {integrity: sha512-lpJDKs7ZI9Oh95xeLhaGrvYrY5eu4Cj5wzAfy81e3r6vnrV0+LYu4+TblOxYYViwsC7ufDfU81nPvpwB1Dhu6g==}
+  '@keycloakify/keycloak-login-ui-storybook@250004.0.2':
+    resolution: {integrity: sha512-lumGQj0bwXiMwPSnglg3NjacNkGpHHFtmrBS06ueAO59VccQtgk9zqyFr/bglZHhOuPknYr8u+PtIvJPpj+eTw==}
     peerDependencies:
       '@keycloakify/keycloak-login-ui': ~250004.0.23
 
-  '@keycloakify/keycloak-login-ui@250004.0.24':
-    resolution: {integrity: sha512-u3hFwteGhmB5Tw5HUJUIoJu4SMB/IqSGfm9RrTS8mge4OZY+rxgAPSyB2ZtIUvaiOfqTgrP95DGbf0oRBDS0xw==}
+  '@keycloakify/keycloak-login-ui@250004.0.25':
+    resolution: {integrity: sha512-2YCI30jjPG2D389/0fTMxRwhz763r3avhCebqD/wu4he1X6ljmDq/kRNPqQhqvdLgH9elWQMyVnt7nvaPMl8kA==}
     peerDependencies:
       tsafe: ^1.8.5
 
@@ -1884,19 +1884,19 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.0(@keycloakify/keycloak-account-multi-page-ui@210102.0.11(tsafe@1.8.5))':
+  '@keycloakify/keycloak-account-multi-page-ui-storybook@210102.0.2(@keycloakify/keycloak-account-multi-page-ui@210102.0.12(tsafe@1.8.5))':
     dependencies:
-      '@keycloakify/keycloak-account-multi-page-ui': 210102.0.11(tsafe@1.8.5)
+      '@keycloakify/keycloak-account-multi-page-ui': 210102.0.12(tsafe@1.8.5)
 
-  '@keycloakify/keycloak-account-multi-page-ui@210102.0.11(tsafe@1.8.5)':
+  '@keycloakify/keycloak-account-multi-page-ui@210102.0.12(tsafe@1.8.5)':
     dependencies:
       tsafe: 1.8.5
 
-  '@keycloakify/keycloak-login-ui-storybook@250004.0.0(@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5))':
+  '@keycloakify/keycloak-login-ui-storybook@250004.0.2(@keycloakify/keycloak-login-ui@250004.0.25(tsafe@1.8.5))':
     dependencies:
-      '@keycloakify/keycloak-login-ui': 250004.0.24(tsafe@1.8.5)
+      '@keycloakify/keycloak-login-ui': 250004.0.25(tsafe@1.8.5)
 
-  '@keycloakify/keycloak-login-ui@250004.0.24(tsafe@1.8.5)':
+  '@keycloakify/keycloak-login-ui@250004.0.25(tsafe@1.8.5)':
     dependencies:
       tsafe: 1.8.5
 
