@@ -5,6 +5,8 @@
  * $ npx keycloakify own --path "login/pages/login-recovery-authn-code-config/useScript.tsx" --revert
  */
 
+/* eslint-disable */
+
 import { useEffect } from "react";
 import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
 import { waitForElementMountedOnDom } from "@keycloakify/keycloak-login-ui/tools/waitForElementMountedOnDom";

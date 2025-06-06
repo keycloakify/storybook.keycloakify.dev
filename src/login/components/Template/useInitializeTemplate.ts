@@ -5,6 +5,8 @@
  * $ npx keycloakify own --path "login/components/Template/useInitializeTemplate.ts" --revert
  */
 
+/* eslint-disable */
+
 import { useEffect } from "react";
 import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
 import { useInsertLinkTags } from "@keycloakify/keycloak-login-ui/tools/useInsertLinkTags";

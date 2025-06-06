@@ -5,6 +5,8 @@
  * $ npx keycloakify own --path "login/pages/webauthn-register/useScript.tsx" --revert
  */
 
+/* eslint-disable */
+
 import { useEffect } from "react";
 import { assert } from "tsafe/assert";
 import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
