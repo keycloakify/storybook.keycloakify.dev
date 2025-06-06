@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import { useEffect, useReducer } from "react";
 import { useConst } from "./useConst";
 import { id } from "tsafe/id";

@@ -5,20 +5,33 @@
  * $ npx keycloakify own --path "login/KcPage.tsx" --revert
  */
 
-import { Suspense, lazy } from "react";
+/* eslint-disable */
+
+import { Suspense, lazy, useMemo  } from "react";
 import { assert, type Equals } from "tsafe/assert";
 import { KcClsxProvider, type ClassKey } from "@keycloakify/keycloak-login-ui/useKcClsx";
 import { type KcContext, KcContextProvider, useKcContext } from "./KcContext";
 import { I18nProvider } from "./i18n";
+import { useExclusiveAppInstanceEffect } from "../tools/useExclusiveAppInstanceEffect";
 
-const classes = {} satisfies { [key in ClassKey]?: string };
 
 export default function KcPage(props: { kcContext: KcContext }) {
     const { kcContext } = props;
 
+    const { doUseDefaultCss, classes, effect } = useMemo(()=> getStyleLevelCustomization({ kcContext }), [kcContext]);
+
+    useExclusiveAppInstanceEffect({
+        componentOrHookName: "KcPage",
+        isEnabled: effect !== undefined,
+        effect: ()=> { 
+            assert(effect !== undefined);
+            effect();
+        }
+    });
+
     return (
         <KcContextProvider kcContext={kcContext}>
-            <KcClsxProvider doUseDefaultCss={true} classes={classes}>
+            <KcClsxProvider doUseDefaultCss={doUseDefaultCss} classes={classes}>
                 <I18nProvider kcContext={kcContext}>
                     <Suspense>
                         <Page />
@@ -27,6 +40,24 @@ export default function KcPage(props: { kcContext: KcContext }) {
             </KcClsxProvider>
         </KcContextProvider>
     );
+}
+
+type Classes = { [key in ClassKey]?: string };
+
+type StyleLevelCustomization = {
+    doUseDefaultCss: boolean;
+    classes: Classes;
+    effect: (()=> void) | undefined;
+};
+
+function getStyleLevelCustomization(params: { kcContext: KcContext; }): StyleLevelCustomization{
+
+    return {
+        doUseDefaultCss: true,
+        classes: {},
+        effect: undefined
+    };
+
 }
 
 const Page_login = lazy(() => import("./pages/login"));

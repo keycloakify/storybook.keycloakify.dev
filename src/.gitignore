@@ -6,6 +6,7 @@
 # login/pages/login-recovery-authn-code-config/useScript.tsx
 # login/pages/webauthn-authenticate/useScript.tsx
 # login/pages/webauthn-register/useScript.tsx
+# login/KcPage.tsx
 # === Owned files end =====
 
 # === @keycloakify/keycloak-account-multi-page-ui v210102.0.13 ===
@@ -32,7 +33,6 @@
 /account/components/Template/useInitializeTemplate.ts
 
 # === @keycloakify/keycloak-login-ui v250004.0.26 ===
-/login/KcPage.tsx
 /login/components/LogoutOtherSessions.tsx
 /login/mocks/getKcContextMock.ts
 /login/i18n.ts
