@@ -8,8 +8,8 @@
 /* eslint-disable */
 
 import { useEffect } from "react";
-import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
-import { useInsertLinkTags } from "@keycloakify/keycloak-login-ui/tools/useInsertLinkTags";
+import { useInsertScriptTags } from "../../../tools/useInsertScriptTags";
+import { useInsertLinkTags } from "../../../tools/useInsertLinkTags";
 import { useKcClsx } from "@keycloakify/keycloak-login-ui/useKcClsx";
 import { BASE_URL } from "@keycloakify/keycloak-login-ui/import.meta.env.BASE_URL";
 import { useKcContext } from "../../KcContext";

@@ -8,7 +8,7 @@
 /* eslint-disable */
 
 import { useEffect } from "react";
-import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
+import { useInsertScriptTags } from "../../../tools/useInsertScriptTags";
 import { waitForElementMountedOnDom } from "@keycloakify/keycloak-login-ui/tools/waitForElementMountedOnDom";
 import { useI18n } from "../../i18n";
 

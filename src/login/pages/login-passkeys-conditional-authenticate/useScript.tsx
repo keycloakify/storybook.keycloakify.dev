@@ -9,7 +9,7 @@
 
 import { useEffect } from "react";
 import { assert } from "tsafe/assert";
-import { useInsertScriptTags } from "@keycloakify/keycloak-login-ui/tools/useInsertScriptTags";
+import { useInsertScriptTags } from "../../../tools/useInsertScriptTags";
 import { waitForElementMountedOnDom } from "@keycloakify/keycloak-login-ui/tools/waitForElementMountedOnDom";
 import { BASE_URL } from "@keycloakify/keycloak-login-ui/import.meta.env.BASE_URL";
 import { useI18n } from "../../i18n";
