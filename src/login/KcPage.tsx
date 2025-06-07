@@ -37,7 +37,7 @@ function StyleLevelCustomization(props: { children: ReactNode }) {
         useStyleLevelCustomization();
 
     useExclusiveAppInstanceEffect({
-        componentOrHookName: "StyleLevelCustomization",
+        effectId: "loadCustomStylesheet",
         isEnabled: loadCustomStylesheet !== undefined,
         effect: () => {
             assert(loadCustomStylesheet !== undefined);

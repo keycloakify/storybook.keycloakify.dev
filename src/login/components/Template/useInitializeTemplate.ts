@@ -20,7 +20,7 @@ export function useInitializeTemplate() {
     const { doUseDefaultCss } = useKcClsx();
 
     const { areAllStyleSheetsLoaded } = useInsertLinkTags({
-        componentOrHookName: "Template",
+        effectId: "Template",
         hrefs: !doUseDefaultCss
             ? []
             : [
@@ -33,7 +33,7 @@ export function useInitializeTemplate() {
     });
 
     const { insertScriptTags } = useInsertScriptTags({
-        componentOrHookName: "Template",
+        effectId: "Template",
         scriptTags: [
             // NOTE: The importmap is added in by the FTL script because it's too late to add it here.
             {

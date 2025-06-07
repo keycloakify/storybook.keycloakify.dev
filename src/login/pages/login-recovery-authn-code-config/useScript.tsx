@@ -18,7 +18,7 @@ export function useScript(params: { olRecoveryCodesListId: string }) {
     const { msgStr, isFetchingTranslations } = useI18n();
 
     const { insertScriptTags } = useInsertScriptTags({
-        componentOrHookName: "LoginRecoveryAuthnCodeConfig",
+        effectId: "LoginRecoveryAuthnCodeConfig",
         scriptTags: [
             {
                 type: "text/javascript",

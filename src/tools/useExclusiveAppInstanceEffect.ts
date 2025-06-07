@@ -7,47 +7,43 @@ const GLOBAL_CONTEXT_KEY = "__keycloakify.useExclusiveAppInstanceEffect.globalCo
 declare global {
     interface Window {
         [GLOBAL_CONTEXT_KEY]: {
-            alreadyMountedComponentOrHookNames: Set<string>;
+            alreadyRanEffectId: Set<string>;
         };
     }
 }
 
 window[GLOBAL_CONTEXT_KEY] ??= {
-    alreadyMountedComponentOrHookNames: new Set()
+    alreadyRanEffectId: new Set()
 };
 
 const globalContext = window[GLOBAL_CONTEXT_KEY];
 
-const { alreadyMountedComponentOrHookNames } = globalContext;
+const { alreadyRanEffectId } = globalContext;
 
 export function useExclusiveAppInstanceEffect(params: {
     isEnabled?: boolean;
-    componentOrHookName: string;
+    effectId: string;
     effect: () => void;
 }) {
-    const { componentOrHookName, effect, isEnabled = true } = params;
+    const { effectId, effect, isEnabled = true } = params;
 
     useOnFistMount({
         isEnabled,
         effect: () => {
-            const isAlreadyMounted =
-                alreadyMountedComponentOrHookNames.has(componentOrHookName);
+            const isAlreadyRan = alreadyRanEffectId.has(effectId);
 
-            if (isAlreadyMounted) {
-                reload: {
-                    if (
-                        new URL(window.location.href).searchParams.get("viewMode") ===
-                        "docs"
-                    ) {
-                        // NOTE: Special case for Storybook, we want to avoid infinite reload loop.
-                        break reload;
-                    }
-                    window.location.reload();
+            if (isAlreadyRan) {
+
+                // NOTE: Special case for Storybook, we want to avoid infinite reload loop.
+                if( new URL(window.location.href).searchParams.get("viewMode") === "docs" ){
+                    return;
                 }
+
+                window.location.reload();
                 return;
             }
 
-            alreadyMountedComponentOrHookNames.add(componentOrHookName);
+            alreadyRanEffectId.add(effectId);
 
             effect();
 

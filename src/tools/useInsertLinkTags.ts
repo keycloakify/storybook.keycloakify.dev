@@ -10,10 +10,10 @@ import { useExclusiveAppInstanceEffect } from "./useExclusiveAppInstanceEffect";
  * This simulates the behavior of a server rendered page that imports css stylesheet in the head.
  */
 export function useInsertLinkTags(params: {
-    componentOrHookName: string;
+    effectId: string;
     hrefs: string[];
 }) {
-    const { hrefs, componentOrHookName } = params;
+    const { hrefs, effectId } = params;
 
     const [areAllStyleSheetsLoaded, setAllStyleSheetsLoaded] = useReducer(
         () => true,
@@ -22,7 +22,7 @@ export function useInsertLinkTags(params: {
 
     useExclusiveAppInstanceEffect({
         isEnabled: hrefs.length !== 0,
-        componentOrHookName,
+        effectId: `useInsertLinkTags_${effectId}`,
         effect: async () => {
             let lastMountedHtmlElement: HTMLLinkElement | undefined = undefined;
 

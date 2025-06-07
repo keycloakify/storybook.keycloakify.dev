@@ -19,21 +19,11 @@ export namespace ScriptTag {
     };
 }
 
-/**
- * NOTE: The component that use this hook can only be mounded once!
- * And can't rerender with different scriptTags.
- * If it's mounted again the page will be reloaded.
- * This simulates the behavior of a server rendered page that imports javascript in the head.
- *
- * The returned function is supposed to be called in a useEffect and
- * will not download the scripts multiple times event if called more than once (react strict mode).
- *
- */
 export function useInsertScriptTags(params: {
-    componentOrHookName: string;
+    effectId: string;
     scriptTags: ScriptTag[];
 }) {
-    const { scriptTags, componentOrHookName } = params;
+    const { scriptTags, effectId } = params;
 
     const [isInsertScriptTagsCalled, setIsInsertScriptTagsCalledToTrue] = useReducer(
         () => true,
@@ -42,7 +32,7 @@ export function useInsertScriptTags(params: {
 
     useExclusiveAppInstanceEffect({
         isEnabled: scriptTags.length !== 0 && isInsertScriptTagsCalled,
-        componentOrHookName,
+        effectId: `useInsertScriptTags_${effectId}`,
         effect: () => {
             for (const scriptTag of scriptTags) {
                 // NOTE: Avoid loading same script twice. (Like jQuery for example)
