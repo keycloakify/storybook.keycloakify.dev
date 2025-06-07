@@ -456,9 +456,9 @@
   integrity sha512-lumGQj0bwXiMwPSnglg3NjacNkGpHHFtmrBS06ueAO59VccQtgk9zqyFr/bglZHhOuPknYr8u+PtIvJPpj+eTw==
 
 "@keycloakify/keycloak-login-ui@~250004.0.23":
-  version "250004.0.26"
-  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-login-ui/-/keycloak-login-ui-250004.0.26.tgz#2d148f6ce9b362f2f9990c51e3b68b813eba2c88"
-  integrity sha512-aGCEEfeEtH+i5fmO3qiTpKMZNlk/TYLOt/zlmKHPC+JqBcZForzopHoUHf5mn3cODAjwXHY8uAuTav5QJLtMjw==
+  version "250004.0.27"
+  resolved "https://registry.yarnpkg.com/@keycloakify/keycloak-login-ui/-/keycloak-login-ui-250004.0.27.tgz#53bba84dc09ef5982bffd12f329fc4948770f067"
+  integrity sha512-8B1hWqlizvyd43PWS3hhEX/d/nwIwFHmzPz3cWFtaeeICCanWnAmTTnvR5pct0Uvgm0K5S9YgswLpOoV0VlXnQ==
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"

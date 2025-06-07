@@ -5,7 +5,7 @@
  * $ npx keycloakify own --path "login/KcPage.tsx" --revert
  */
 
-// WARNING: There is no reason to own this file.
+// WARNING: This is **not** a file that you would typically want to own.
 // If you want to apply CSS level customization, own ./styleLevelCustomization.tsx instead
 import type { ReactNode } from "react";
 import { assert } from "tsafe/assert";

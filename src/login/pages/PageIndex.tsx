@@ -3,6 +3,8 @@
 import { Suspense, lazy } from "react";
 import { assert, type Equals } from "tsafe/assert";
 import { useKcContext } from "../KcContext";
+import { ExtensionsPageIndex } from "./ExtensionsPageIndex";
+import { type PageId as PageId_builtin } from "@keycloakify/keycloak-login-ui/KcContext";
 
 const Page_login = lazy(() => import("./login"));
 const Page_register = lazy(() => import("./register"));
@@ -120,9 +122,10 @@ export function PageIndex() {
                         return <Page_login_passkeys_conditional_authenticate />;
                     case "login-idp-link-confirm-override.ftl":
                         return <Page_login_idp_link_confirm_override />;
+                    default:
+                        assert<Equals<Extract<typeof kcContext["pageId"], PageId_builtin>, never>>;
+                        return <ExtensionsPageIndex />;
                 }
-
-                assert<Equals<typeof kcContext, never>>;
             })()}
         </Suspense>
     );
