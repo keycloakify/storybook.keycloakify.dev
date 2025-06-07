@@ -1,10 +1,8 @@
 /* eslint-disable */
 
+import { useReducer, useCallback } from "react";
 import { assert } from "tsafe/assert";
 import { useExclusiveAppInstanceEffect } from "./useExclusiveAppInstanceEffect";
-import { useConst } from "./useConst";
-import { createStatefulObservable } from "./StatefulObservable";
-import { useConstCallback } from "./useConstCallback";
 
 export type ScriptTag = ScriptTag.TextContent | ScriptTag.Src;
 
@@ -37,85 +35,71 @@ export function useInsertScriptTags(params: {
 }) {
     const { scriptTags, componentOrHookName } = params;
 
-    const $isInsertScriptTagsCalled = useConst(() =>
-        createStatefulObservable(() => false)
+    const [isInsertScriptTagsCalled, setIsInsertScriptTagsCalledToTrue] = useReducer(
+        () => true,
+        false
     );
 
-
     useExclusiveAppInstanceEffect({
-        isEnabled: scriptTags.length !== 0,
+        isEnabled: scriptTags.length !== 0 && isInsertScriptTagsCalled,
         componentOrHookName,
         effect: () => {
-
-            const trigger = () => {
-                for (const scriptTag of scriptTags) {
-                    // NOTE: Avoid loading same script twice. (Like jQuery for example)
-                    {
-                        const scripts = document.getElementsByTagName("script");
-                        for (let i = 0; i < scripts.length; i++) {
-                            const script = scripts[i];
-                            if ("textContent" in scriptTag) {
-                                const textContent =
-                                    typeof scriptTag.textContent === "function"
-                                        ? scriptTag.textContent()
-                                        : scriptTag.textContent;
-
-                                if (script.textContent === textContent) {
-                                    return;
-                                }
-                                continue;
-                            }
-                            if ("src" in scriptTag) {
-                                if (script.getAttribute("src") === scriptTag.src) {
-                                    return;
-                                }
-                                continue;
-                            }
-                            assert(false);
-                        }
-                    }
-
-                    const htmlElement = document.createElement("script");
-
-                    htmlElement.type = scriptTag.type;
-
-                    (() => {
+            for (const scriptTag of scriptTags) {
+                // NOTE: Avoid loading same script twice. (Like jQuery for example)
+                {
+                    const scripts = document.getElementsByTagName("script");
+                    for (let i = 0; i < scripts.length; i++) {
+                        const script = scripts[i];
                         if ("textContent" in scriptTag) {
                             const textContent =
                                 typeof scriptTag.textContent === "function"
                                     ? scriptTag.textContent()
                                     : scriptTag.textContent;
 
-                            htmlElement.textContent = textContent;
-                            return;
+                            if (script.textContent === textContent) {
+                                return;
+                            }
+                            continue;
                         }
                         if ("src" in scriptTag) {
-                            htmlElement.src = scriptTag.src;
-                            return;
+                            if (script.getAttribute("src") === scriptTag.src) {
+                                return;
+                            }
+                            continue;
                         }
                         assert(false);
-                    })();
-
-                    document.head.appendChild(htmlElement);
+                    }
                 }
-            };
 
-            if( $isInsertScriptTagsCalled.current ){
-                trigger();
-            }else{
-                const { unsubscribe } = $isInsertScriptTagsCalled.subscribe(()=> {
-                    unsubscribe();
-                    trigger();
-                });
+                const htmlElement = document.createElement("script");
+
+                htmlElement.type = scriptTag.type;
+
+                (() => {
+                    if ("textContent" in scriptTag) {
+                        const textContent =
+                            typeof scriptTag.textContent === "function"
+                                ? scriptTag.textContent()
+                                : scriptTag.textContent;
+
+                        htmlElement.textContent = textContent;
+                        return;
+                    }
+                    if ("src" in scriptTag) {
+                        htmlElement.src = scriptTag.src;
+                        return;
+                    }
+                    assert(false);
+                })();
+
+                document.head.appendChild(htmlElement);
             }
-
         }
     });
 
-
-    const insertScriptTags = useConstCallback(() => {
-        $isInsertScriptTagsCalled.current = true;
-    });
+    const insertScriptTags = useCallback(() => {
+        setIsInsertScriptTagsCalledToTrue();
+    }, []);
 
     return { insertScriptTags };
 }
