@@ -47,3 +47,15 @@ export function KcPage(props: { kcContext: KcContext; fallback?: ReactNode }) {
         </Suspense>
     );
 }
+
+
+import { assert } from "tsafe/assert";
+
+// NOTE: This is a polyfill for `import.meta.env.BASE_URL` as it's not available in Webpack environment.
+export const BASE_URL =
+    window.kcContext === undefined || process.env.NODE_ENV === "development"
+        ? process.env.PUBLIC_URL === ""
+            ? "/"
+            : `${process.env.PUBLIC_URL}/`
+        : `${kcContext["x-keycloakify"].resourcesPath}/dist/`;
+

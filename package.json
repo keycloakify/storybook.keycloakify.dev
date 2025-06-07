@@ -14,16 +14,16 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@keycloakify/keycloak-account-multi-page-ui": "~210102.0.15",
-        "@keycloakify/keycloak-login-ui": "~250004.0.30",
+        "@keycloakify/keycloak-account-multi-page-ui": "~210102.0.16",
+        "@keycloakify/keycloak-login-ui": "~250004.0.32",
         "keycloakify": "^11.8.39",
         "react": "^19.1.0",
         "react-dom": "^19.1.0",
         "tsafe": "^1.8.5"
     },
     "devDependencies": {
-        "@keycloakify/keycloak-account-multi-page-ui-storybook": "~210102.0.3",
-        "@keycloakify/keycloak-login-ui-storybook": "~250004.0.3",
+        "@keycloakify/keycloak-account-multi-page-ui-storybook": "~210102.0.4",
+        "@keycloakify/keycloak-login-ui-storybook": "~250004.0.4",
         "@eslint/js": "^9.25.0",
         "@storybook/react-vite": "^9.0.4",
         "@types/react": "^19.1.2",
