@@ -25,7 +25,6 @@
         "@keycloakify/keycloak-account-multi-page-ui-storybook": "~210102.0.2",
         "@keycloakify/keycloak-login-ui-storybook": "~250004.0.2",
         "@eslint/js": "^9.25.0",
-        "@storybook/addon-onboarding": "^9.0.4",
         "@storybook/react-vite": "^9.0.4",
         "@types/react": "^19.1.2",
         "@types/react-dom": "^19.1.2",

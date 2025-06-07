@@ -600,11 +600,6 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.41.2.tgz#7c7c5d4524213e233c74e554c430581e9a989a1f"
   integrity sha512-AQ5GvrrLYw6dfkfT/bgYg1NU54exCKDrO9JKOE87zy2mdf2CyI6Vayy41r8Vo+kNDpqacaVQppwvYl30YGJu/Q==
 
-"@storybook/addon-onboarding@^9.0.4":
-  version "9.0.5"
-  resolved "https://registry.yarnpkg.com/@storybook/addon-onboarding/-/addon-onboarding-9.0.5.tgz#96ed821208eb7c208da672ba92d8c620458b2793"
-  integrity sha512-+uYKiu6LuG9/J9MzocZdr0MIHKbJTNqv1Yx6xLtHoxJyXp02QB7ywFSQlNu/DZtpB9U5weys7DzFIHu5W9qJbQ==
-
 "@storybook/builder-vite@9.0.5":
   version "9.0.5"
   resolved "https://registry.yarnpkg.com/@storybook/builder-vite/-/builder-vite-9.0.5.tgz#daa15a265c2452c18258bf883de41a70e62245ad"

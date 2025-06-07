@@ -39,6 +39,8 @@ export function useExclusiveAppInstanceEffect(params: {
                     return;
                 }
 
+                console.log(`=====> ${effectId}`);
+
                 window.location.reload();
                 return;
             }
