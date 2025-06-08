@@ -17,8 +17,8 @@
         "@keycloakify/account-multi-page-ui": "~210102.0.18",
         "@keycloakify/login-ui": "~250004.0.33",
         "keycloakify": "^11.8.45",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
+        "react": "^18.0.0",
+        "react-dom": "^18.0.0",
         "tsafe": "^1.8.5"
     },
     "devDependencies": {
