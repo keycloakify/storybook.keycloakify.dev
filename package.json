@@ -14,7 +14,6 @@
         "build-storybook": "storybook build"
     },
     "dependencies": {
-        "@keycloakify/account-multi-page-ui": "~210102.0.18",
         "@keycloakify/login-ui": "~250004.0.33",
         "keycloakify": "^11.8.45",
         "react": "^18.0.0",
@@ -22,7 +21,6 @@
         "tsafe": "^1.8.5"
     },
     "devDependencies": {
-        "@keycloakify/account-multi-page-ui-storybook": "~210102.0.5",
         "@keycloakify/login-ui-storybook": "~250004.0.5",
         "@eslint/js": "^9.25.0",
         "@storybook/react-vite": "^9.0.4",
