@@ -7,10 +7,5 @@ const config: StorybookConfig = {
         name: "@storybook/react-vite",
         options: {}
     },
-    /*
-    managerHead: head => [
-        head,
-    ].join("\n")
-    */
 };
 export default config;
