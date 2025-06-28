@@ -3,7 +3,7 @@
 # === Owned files start ===
 # === Owned files end =====
 
-# === @keycloakify/login-ui v250004.1.0 ===
+# === @keycloakify/login-ui v250004.1.1 ===
 /login/i18n.ts
 /login/KcContext.ts
 /login/KcPage.tsx
