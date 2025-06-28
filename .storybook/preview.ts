@@ -88,7 +88,6 @@ const preview: Preview = {
                 }
             }
         },
-
         options: {
             storySort: (a, b) => {
                 const orderedPagesPrefix = [
